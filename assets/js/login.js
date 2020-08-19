@@ -51,8 +51,9 @@ $(function () {
 
                 }
                 layer.msg('注册成功,请登录');
-                // 
+                // 注册成功,切换到登录页面
                 $('#link_login').click()
+                // 清空页面内容
                 $('#form_reg')[0].reset()
             }
         })
