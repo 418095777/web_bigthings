@@ -10,7 +10,7 @@ $.ajaxPrefilter(function (options) {
     // 1.拼接对应的环境服务器地址
     options.url = baseURL + options.url
     // alert(options.url)
-    // 2.对需要权限的借口配置头信息
+    // 2.对需要权限的接口配置头信息
     // 必须以my开头
     if (options.url.indexOf('/my/') !== -1) {
         options.headers = {
@@ -19,8 +19,7 @@ $.ajaxPrefilter(function (options) {
     }
     // 3.拦截所有响应,判断身份认证信息
     options.complete = function (res) {
-        console.log(res.responseJSON);
-        console.log(res.message);
+        // console.log(res.responseJSON);
         var obj = res.responseJSON
         if (obj.status === 1 && obj.message === '身份认证失败！') {
             // 1.清空token

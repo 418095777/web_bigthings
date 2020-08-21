@@ -33,7 +33,7 @@ function getUserInfo() {
         },
         complete: function (res) {
             // 在complete回调函数中,可以使用res.responseJSON拿到服务器响应回来的数据
-            if (res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败!') {
+            if (res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败！') {
                 // 1.强制清空token
                 localStorage.removeItem('token')
                 // 2.强制跳转到登录页面
@@ -51,7 +51,7 @@ function renderAvatar(user) {
     // 3.按需渲染头像
     if (user.user_pic !== null) {
         // 3.1渲染图片头像
-        $('.layui-nav-img').attr('src', user_pic).show()
+        $('.layui-nav-img').attr('src', user.user_pic).show()
         $('.text-avatar').hide()
     } else {
         // 3.2渲染文本头像
