@@ -96,6 +96,9 @@ $(function () {
                 }
                 layer.msg('添加文章成功')
                 location.href = '/article/art_list.html'
+                setTimeout(function () {
+                    window.parent.document.getElementById('art_list').click()
+                })
             }
         })
     }
